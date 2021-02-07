@@ -1,0 +1,77 @@
+#addParamList input[type='button'] {
+  color: #fff;
+  padding: 4px 16px;
+  background-color: #1890ff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+.add-param-popup-title {
+  color: #333;
+  font-size: 14px;
+}
+
+#paramsInputDiv {
+  padding: 8px 0;
+}
+
+#paramsValue {
+  width: 300px;
+  height: 20px;
+}
+
+#paramsValueTips {
+  color: #999;
+  padding: 4px;
+}
+
+#addParam {
+  color: #fff;
+  padding: 4px 16px;
+  background-color: #1890ff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#resetParamsDiv {
+  padding: 8px 0;
+}
+#resetParam {
+  color: #fff;
+  padding: 4px 16px;
+  background-color: #f5222d;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+#paramsList {
+  padding: 8px;
+  width: 600px;
+  max-height: 300px;
+  overflow: auto;
+}
+#paramsList .param-item {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #c1c1c1;
+  padding: 8px;
+}
+#paramsList .param-item .url-param-item-label {
+  min-width: 120px;
+  color: #666;
+  text-align: right;
+  display: inline-block;
+}
+#paramsList .param-item .url-param-item-value {
+  font-weight: bold;
+  padding-left: 8px;
+}
+#paramsList .param-item .url-param-del-btn {
+  color: #f5222d;
+  padding: 4px 16px;
+  border-left: 1px solid #c1c1c1;
+  cursor: pointer;
+}
