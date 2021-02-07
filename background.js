@@ -21,7 +21,7 @@ function setupContextMenu() {
       chrome.contextMenus.create({
         title: `Open new tab with param: ${shortVal}`,
         id: v,
-        contexts: ['all'],
+        contexts: ["page", "frame", "selection", "link", "image", "video", "audio"]
       });
     }
   });
