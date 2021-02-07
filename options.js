@@ -40,7 +40,7 @@ function handleAddParamClick() {
     chrome.contextMenus.create({
       title: pValue,
       id: pKey,
-      contexts: ['all'],
+      contexts: ['page', 'frame', 'selection', 'link', 'image', 'video', 'audio'],
     });
 
     chrome.storage.sync.set({
