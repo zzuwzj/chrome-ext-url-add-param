@@ -52,8 +52,11 @@ function constructParamOptions() {
       paramBtn.type = 'button';
       paramBtn.setAttribute(ATTR_PARAM_BTN, true);
       paramBtn.setAttribute(ATTR_URL_PARAM, v);
+      paramBtn.setAttribute("title", v);
 
-      const paramStr = `${v}`;
+      const shortVal = v.length > 30 ? `${v.substr(0, 15)} ... ${v.substr(-15)}` : v;
+
+      const paramStr = `${shortVal}`;
       paramBtn.value = paramStr;
       addParamList.appendChild(paramBtn);
     }

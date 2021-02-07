@@ -1,16 +1,22 @@
 #addParamList input[type='button'] {
+  display: block;
   color: #fff;
   padding: 4px 16px;
   background-color: #1890ff;
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  margin: 8px 0;
+  margin-bottom: 8px;
+}
+
+#addParamList input[type='button']:focus {
+  outline: none;
 }
 
 .add-param-popup-title {
   color: #333;
   font-size: 14px;
+  margin-bottom: 8px;
 }
 
 #paramsInputDiv {
@@ -19,7 +25,7 @@
 
 #paramsValue {
   width: 300px;
-  height: 20px;
+  height: 26px;
 }
 
 #paramsValueTips {
@@ -29,11 +35,15 @@
 
 #addParam {
   color: #fff;
-  padding: 4px 16px;
+  padding: 8px 16px;
   background-color: #1890ff;
   border: none;
   border-radius: 2px;
   cursor: pointer;
+}
+
+#addParam:focus {
+  outline: none;
 }
 
 #resetParamsDiv {
@@ -41,22 +51,22 @@
 }
 #resetParam {
   color: #fff;
-  padding: 4px 16px;
+  padding: 8px 16px;
   background-color: #f5222d;
   border: none;
   border-radius: 2px;
   cursor: pointer;
 }
 #paramsList {
-  padding: 8px;
   width: 600px;
   max-height: 300px;
   overflow: auto;
+  border-bottom: 1px solid #c1c1c1;
 }
 #paramsList .param-item {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #c1c1c1;
+  border-top: 1px solid #c1c1c1;
   padding: 8px;
 }
 #paramsList .param-item .url-param-item-label {

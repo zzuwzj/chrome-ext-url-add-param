@@ -35,6 +35,13 @@ function handleAddParamClick() {
     const pValue = paramsValue.value;
     const paramKeys = pValue.split('&').map((el) => el.split('=')[0]);
     const pKey = getParamKey(paramKeys);
+    if (!pKey || !pValue) return;
+
+    chrome.contextMenus.create({
+      title: pValue,
+      id: pKey,
+      contexts: ['all'],
+    });
 
     chrome.storage.sync.set({
       urlParam: {
@@ -53,6 +60,8 @@ function handleDeleteParamClick(evt) {
   if (isDeleteBtnClicked) {
     const urlParamName = evt.target.getAttribute(ATTR_URL_PARAM_NAME);
 
+    chrome.contextMenus.remove(urlParamName);
+
     chrome.storage.sync.get('urlParam', ({ urlParam }) => {
       delete urlParam[urlParamName];
       chrome.storage.sync.set({
@@ -68,6 +77,8 @@ function handleResetClick() {
   chrome.storage.sync.set({
     urlParam: {},
   });
+
+  chrome.contextMenus.removeAll();
   constructParamOptions();
 }
 
@@ -84,7 +95,9 @@ function constructParamOptions() {
       let paramDiv = document.createElement('div');
       paramDiv.classList.add('param-item');
       const [k, v] = param;
-      const paramStr = `<span><span class="url-param-item-label">${k}:</span><span class="url-param-item-value">${v}</span></span>`;
+      const shortKey = k.length > 16 ? `${k.substr(0, 8)} ... ${k.substr(-8)}` : k;
+      const shortVal = v.length > 40 ? `${v.substr(0, 20)} ... ${v.substr(-20)}` : v;
+      const paramStr = `<span><span class="url-param-item-label" title="${k}">${shortKey}:</span><span class="url-param-item-value" title="${v}">${shortVal}</span></span>`;
       const delBtn = `<span class="url-param-del-btn" ${ATTR_PARAM_BTN_DEL}="true" ${ATTR_URL_PARAM_NAME}="${k}">Delete</span>`;
       paramDiv.innerHTML = `${paramStr}${delBtn}`;
 
