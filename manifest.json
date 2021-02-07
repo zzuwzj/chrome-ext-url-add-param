@@ -22,11 +22,5 @@
     "32": "/images/url_32.png",
     "48": "/images/url_48.png",
     "128": "/images/url_128.png"
-  },
-  "app": {
-    "urls": ["https://zzuwzj.github.io/chrome-ext-url-add-param/"],
-    "launch": {
-      "web_url": "https://zzuwzj.github.io/chrome-ext-url-add-param/"
-    }
   }
 }

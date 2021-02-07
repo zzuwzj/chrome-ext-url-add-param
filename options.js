@@ -37,9 +37,10 @@ function handleAddParamClick() {
     const pKey = getParamKey(paramKeys);
     if (!pKey || !pValue) return;
 
+    const shortVal = v.length > 40 ? `${v.substr(0, 20)} ... ${v.substr(-20)}` : v;
     chrome.contextMenus.create({
-      title: pValue,
-      id: pKey,
+      title: `Open new tab with param: ${shortVal}`,
+      id: pValue,
       contexts: ['page', 'frame', 'selection', 'link', 'image', 'video', 'audio'],
     });
 
